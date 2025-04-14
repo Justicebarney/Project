@@ -1,0 +1,54 @@
+/* basketball_styles.css */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #006bb3; /* NBA Blue */
+    text-align: center;
+    padding: 20px 0;
+}
+
+header h1 {
+    color: #fff;
+    font-family: 'Georgia', serif;
+}
+
+#intro {
+    background-color: #e0e0e0;
+    padding: 20px;
+    margin: 20px;
+    text-align: center;
+}
+
+.basketball-image {
+    max-width: 50%;
+    height: auto;
+    border-radius: 8px;
+}
+
+#equipment, #video, #tableau, #resources {
+    background-color: #d0d0d0;
+    padding: 20px;
+    margin: 20px;
+}
+
+a {
+    color: #006bb3;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    background-color: #006bb3;
+    text-align: center;
+    padding: 10px 0;
+    color: #fff;
+}

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Palette Explorer</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+
+        #palette-container {
+            display: flex;
+            margin-bottom: 20px;
+        }
+
+        .color-box {
+            width: 100px;
+            height: 100px;
+            margin: 5px;
+            border: 1px solid #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 12px;
+            text-align: center;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #3e8e41;
+        }
+
+        #link-to-scratch {
+          margin-top:20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Color Palette Explorer</h1>
+    <div id="palette-container"></div>
+    <button id="generate-button">Generate Palette</button>
+    <div id="link-to-basketball">
+      <a href="basketball.html">Back to Basketball</a>
+    </div>
+
+    <script>
+        const paletteContainer = document.getElementById('palette-container');
+        const generateButton = document.getElementById('generate-button');
+
+        function generateRandomColor() {
+            return '#' + Math.floor(Math.random() * 16777215).toString(16);
+        }
+
+        function generatePalette() {
+            paletteContainer.innerHTML = ''; // Clear previous palette
+            for (let i = 0; i < 5; i++) {
+                const color = generateRandomColor();
+                const colorBox = document.createElement('div');
+                colorBox.classList.add('color-box');
+                colorBox.style.backgroundColor = color;
+                colorBox.textContent = color;
+                paletteContainer.appendChild(colorBox);
+            }
+        }
+
+        generateButton.addEventListener('click', generatePalette);
+
+        // Generate an initial palette on page load
+        generatePalette();
+    </script>
+</body>
+</html>
